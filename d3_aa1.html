@@ -1,0 +1,143 @@
+<!--INSTRUCTIONS
+    Building a Personal Portfolio Website
+    Semantic HTML:
+        Use appropriate semantic elements for different sections of your portfolio (header, about, projects, contact, etc.).
+        Include a header with your name and a navigation menu linking to various sections.
+        Use semantic elements like <article>, <section>, and <footer> where applicable.
+    Forms:
+        Create a contact form in the "Contact" section.
+        Include fields for name, email, subject, and a message.
+        Implement HTML5 validation for required fields and email format.
+        Enhance the form with a visually appealing layout using CSS.
+    Multimedia Integration:
+        Include an image 
+        Utilise SVG
+    Responsive Web Design:
+        Implement a responsive design that adapts to different screen sizes.
+        Ensure that your portfolio is mobile-friendly and provides a good user experience on various devices.
+        Use media queries to adjust styles for different breakpoints.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 3: Afternoon Assignment 1</title>
+    <link rel="stylesheet" href="d3_aa1.css">
+</head>
+
+
+<body>
+    <header>
+        <img id="logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhClvMfqTEOzdtsowrcN3HjGVEnU7Vt_F3Yw&usqp=CAU">
+        
+        <h1>Zarin Zaidi's Portfolio</h1>
+
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#feedbacks">Feedbacks</a></li>
+                <li><a href="#contacts">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+    <section>
+        <div id="about" class="about">
+            <article>
+                <h2>Welcome to Zarin Zaidi's Portfolio</h2>
+                <p>This page will bring you along Zarin's journey toward becoming Fullstack Engineer.</p>
+            </article>
+        </div>
+        
+        <div class="projects">
+            <h2>Project 1: Meals Diary</h2>
+            <div class="projects-item">
+                <img src="https://www.spendwithpennies.com/wp-content/uploads/2023/10/Turkey-Sandwich-SpendWithPennies-4.jpg">
+                <img src="https://www.spendwithpennies.com/wp-content/uploads/2023/06/1200-Caesar-Salad-Recipe-SpendWithPennies.jpg">
+                <img src="https://www.ambitiouskitchen.com/wp-content/uploads/2021/04/Vegan-Stir-Fry-Sesame-Noodles-7.jpg">
+            </div> 
+        </div>   
+
+        <div class="projects">
+            <h2>Project 2: Visit Malaysia</h2>
+            <div class="projects-item">
+                <img src="https://asiamarvels.com/wp-content/uploads/2017/10/hiking-in-malaysia-1.jpg">
+                <img src="https://cdn.kimkim.com/files/a/images/522b8c7df4a45dabe356d755db157db84acaaa95/original-4accc57f4a3dec9de99e689892431dac.jpg">
+                <img src="https://images.lifestyleasia.com/wp-content/uploads/2017/08/10002159/Perhentian-Island-iStock.png">
+            </div>
+        </div>
+        
+        <div class="projects">
+            <h2>Project 3: SVG</h2>
+            <div class="projects-item">
+                <svg width="200" height="200">
+                    <circle cx="100" cy="100" r="80" fill="yellow" stroke="orange" stroke-width="5"></circle>
+                    <text x="50%" y="50%" text-anchor="middle" fill="black" font-size="20">Hello</text>
+                </svg>
+                <svg width="200" height="200">
+                    <circle cx="100" cy="100" r="80" fill="orange" stroke="yellow" stroke-width="5"></circle>
+                    <text x="50%" y="50%" text-anchor="middle" fill="white" font-size="20">World!</text>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <section>
+    <div id="feedbacks">
+        <h2>Feedbacks</h2>
+        <p>Please leave behind your constructive criticism regarding Zarin's Portfolio. Thank you for your time!</p>       
+        <form action="/submit" method="post" onsubmit="return validateForm()">
+            <fieldset>
+                <legend>Contact information</legend>
+
+                <div class="info">
+                <label for="name">Name: </label>
+                <input placeholder="Enter your full name" type="text" id="name" name="name" required>
+                </div>
+
+                <div class="info">
+                <label for="email">Email: </label>
+                <input placeholder="Enter your email" type="email" id="email" name="email" required>
+                </div>
+
+                <div class="answer">
+                <label for="message">Message: </label>
+                <input placeholder="Type in your message" type="text" id="message" name="message" required>
+                </div>
+        
+            </fieldset>
+                
+            <button type="submit">Send Message</button>
+        </form>
+        
+        <script>
+            function validateForm(){
+                var email = document.getElementById("email").value;
+                
+                if(!email.includes("@")){
+                    alert("Please enter a valid email address")
+                    return false;
+                }
+                return true;
+            }
+        </script>
+    </div>
+    </section>
+    </main>
+
+    <footer>
+        <div id="contacts">
+            <address>
+                <a href="https://www.linkedin.com/in/noor-zarina-mohd-zaidi-925982155/" target="_blank">Zarin Zaidi</a><br />
+                Bangi<br />
+                Selangor<br />
+                Malaysia
+              </address>
+        </div>
+        <p>&copy; 2024 Zarin's Portfolio</p>
+    </footer>
+</body>
+</html>

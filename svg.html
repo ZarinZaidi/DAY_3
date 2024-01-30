@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG Demo</title>
+
+    <style>
+        .container{
+            width: 100%;
+            max-width: 1200px;/*to prevent it from stretching out too much on large screen*/
+            margin: 0 auto;/*Centre the container*/
+        }
+
+        img{
+            max-width: 100%;
+            height: auto;/*Ensures proportional scaling of image*/
+        }
+
+        /*Default style for larger screen*/
+        body{
+            font-size: 16px;
+        }
+
+        /*media query for smaller devices*/
+        @media(max-width:768px){
+            body{
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+    <h2>Inline SVG Example</h2>
+    <svg width="200" height="200">
+        <circle cx="100" cy="100" r="80" fill="yellow" stroke="orange" stroke-width="5"></circle>
+        <text x="50%" y="50%" text-anchor="middle" fill="black" font-size="20">SVG</text>
+    </svg>
+
+    <h2>External SVG Example</h2>
+    <!--Using the img element-->
+    <img src="logo-js.svg" alt="SVG Image">
+
+    <!--Using the object element-->
+    <object type="image/svg+xml" data="logo-js.svg"></object>
+</body>
+
+
+</html>

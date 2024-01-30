@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox and Grid Layout</title>
+
+    <style>
+        body{
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: beige;
+        }
+
+        .flex-container{
+            display: flex; /*Declares this is a flex container*/
+            justify-content: space-around; /*distributes flex items with equal space around them horizontally*/
+            align-items: center; /*Centers the flex items vertically*/
+            width: 80%; /*Sets width to 80% of parents*/
+            max-width: 1200px; /*to avoid exessive stretching*/background-color: white; /*white background*/
+            padding: 20px; /*add padding around containers*/
+            border-radius: 8px; /*round off the edges*/
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /*add a slight shadow below*/
+        }
+
+        .flex-item{
+            padding: 20px;
+            text-align: center; /*center the test horizontally*/
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="flex-container">
+        <div class="flex-item">
+            <h2>Item 1</h2>
+            <p>This is the content of Item 1</p>
+        </div>
+
+        <div class="flex-item">
+            <h2>Item 2</h2>
+            <p>This is the content of Item 2</p>
+        </div>
+
+        <div class="flex-item">
+            <h2>Item 3</h2>
+            <p>This is the content of Item 3</p>
+        </div>
+    </div>
+
+    <!--Responsive Image-->
+    <picture>
+        <!--Source for small screen-->
+        <source srcset="image.jpg" media="(min-width: 1200px)">
+
+        <!--Source for medium screen-->
+        <source srcset="image2.jpg" media="(min-width: 768px)">
+
+        <!--Default source for larger screens-->
+        <img src="image.jp" alt="Responsive Image" width="800" height="600">
+    </picture>
+</body>
+
+
+</html>

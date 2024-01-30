@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<!--semantic html is the usage of tags and attribute to help seo,devs,user and ARIA recognize site's feature to operate easily-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D3</title>
+</head>
+<body>
+    <header>
+        <!--Creating a navigation bar/menu for a page-->
+        <nav>
+            <!--More common to use ul. May use ol based on content-->
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!--Used to separate section, chapter, lang, theme within your docs. Visually does not give too much impact compared to div.-->
+    <section>
+        <!--Article defines a self contained piece of content. Commonly used for blog-->
+        <article>
+
+        </article>
+    </section>
+
+    <!--Aside often used for sidebars of additional information-->
+    <aside>
+
+    </aside>
+    
+    <!--aria-label tells screen reader the button is to close-->
+    <!--purpose of role atttribute is to overwrite the default purpose of an element-->
+    <button role="button" aria-label="Close">
+        <!--aria-hidden so that screen reader do not identify/read the x symbol button-->
+        <span aria-hidden="true">&times;</span>
+    </button>
+
+    <!--creating a form to collect input from users-->
+    <form action="/submit" method="post">
+        <!--fieldset and legends group and label the forms-->
+        <fieldset>
+            <legend>Contact information</legend>
+            <label for="name">Name: </label>
+            <!--required attribute ensure those fields have to be filled-->
+            <input placeholder="Please enter your full name" type="text" id="name" name="name" required>
+
+            <label for="email">Email: </label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone: </label>
+            <input type="tel" id="phone" name="phone" required>
+
+        </fieldset>
+
+        <fieldset>
+            <legend>Appointment Details:</legend>
+            <label for="date">Date: </label>
+            <input type="date" id="date" name="date" required>
+            
+            <label for="time">Time: </label>
+            <input type="time" id="time" name="time" required>
+        </fieldset>
+
+        <fieldset>
+            <legend>Rating</legend>
+            <label for="rating">Rate our services (1-5): </label>
+            <input type="range" id="rating" name="rating" min="1" max="5" step="1" required>
+            <output for="rating">3</output>
+        </fieldset>
+
+        <input type="checkbox" id="reminder" name="reminder">
+        <label for="reminder">Remember Me</label>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <!--Form Validation-->
+    <form action="/subscribe" method="post" onsubmit="return validateForm()">
+        <label for="email">Email: </label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="password">Password: </label>
+        <input type="password" id="password" name="password" minlength="8" required>
+
+        <button type="submit">Subscribe</button>
+    </form>
+
+    <!--script is a section for javascript code-->
+    <script>
+        function validateForm(){
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+
+            if(!email.includes("@")){
+                alert("Please enter a valid email address")
+                return false;
+            }
+
+            if(password.length<8){
+                alert("Password must be at least 8 characters long")
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+
+    <!--Embedded audio and video elements-->
+    <h2>Audio Examples</h2>
+    <!--include controls over your audio-->
+    <audio controls>
+        <source src="audio/sample.mp3" type="audio/mp3">
+    </audio>
+
+    <h2>Video Examples</h2>
+    <!--include controls and preset width and height over your video-->
+    <video width="640" height="360" controls>
+        <source src="video/sample.mp4" type="video/mp4">
+    </video>
+
+    <iframe width="640" height="360" controls src="video.ytsample.mp4"></iframe>
+</body>
+
+<!--Footer often used for closing remarks, additional information like contacts, copyright version, etc-->
+<footer>
+    <p>&copy 2024. My Website. All rights resrved</p>
+</footer>
+</html>
